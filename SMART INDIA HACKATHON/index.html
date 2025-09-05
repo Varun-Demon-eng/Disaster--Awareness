@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Preparedness & Response Education System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🛡️ Disaster Prep System</h2>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-btn active" data-section="home">Home</button>
+                <button class="nav-btn" data-section="learning">Learning Modules</button>
+                <button class="nav-btn" data-section="drills">Virtual Drills</button>
+                <button class="nav-btn" data-section="emergency">Emergency Tools</button>
+                <button class="nav-btn" data-section="dashboard">Dashboard</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <h1>Disaster Preparedness & Response Education System</h1>
+                <p>Learn, Practice, and Stay Safe with Interactive Training</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="userPoints">1250</span>
+                        <span class="stat-label">Points</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="userLevel">5</span>
+                        <span class="stat-label">Level</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="userBadges">3</span>
+                        <span class="stat-label">Badges</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Ticker -->
+            <div class="alert-ticker">
+                <div class="ticker-header">🚨 Latest Alerts</div>
+                <div class="ticker-content">
+                    <div class="ticker-item">Heavy rainfall expected in Delhi NCR region. Stay indoors and avoid waterlogged areas.</div>
+                    <div class="ticker-item">Mild earthquake recorded in Himachal Pradesh. No immediate danger reported.</div>
+                    <div class="ticker-item">Remember: During earthquakes, DROP, COVER, and HOLD ON. Stay calm and protect yourself.</div>
+                </div>
+            </div>
+
+            <!-- Disaster Type Cards -->
+            <div class="disaster-grid">
+                <div class="disaster-card" data-disaster="earthquake">
+                    <div class="disaster-icon">🏠</div>
+                    <h3>Earthquake</h3>
+                    <p>Learn about earthquake safety and preparedness</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                        <span class="progress-text">75% Complete</span>
+                    </div>
+                </div>
+                <div class="disaster-card" data-disaster="fire">
+                    <div class="disaster-icon">🔥</div>
+                    <h3>Fire</h3>
+                    <p>Fire safety and evacuation procedures</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                        <span class="progress-text">60% Complete</span>
+                    </div>
+                </div>
+                <div class="disaster-card" data-disaster="flood">
+                    <div class="disaster-icon">🌊</div>
+                    <h3>Flood</h3>
+                    <p>Flood preparedness and response</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%"></div>
+                        <span class="progress-text">40% Complete</span>
+                    </div>
+                </div>
+                <div class="disaster-card" data-disaster="cyclone">
+                    <div class="disaster-icon">🌀</div>
+                    <h3>Cyclone</h3>
+                    <p>Cyclone preparedness and safety measures</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 20%"></div>
+                        <span class="progress-text">20% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Modules Section -->
+    <section id="learning" class="section">
+        <div class="container">
+            <h1>Learning Modules</h1>
+            <div class="modules-grid" id="modulesGrid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Drills Section -->
+    <section id="drills" class="section">
+        <div class="container">
+            <h1>Virtual Drills</h1>
+            <div class="drills-section">
+                <div class="leaderboard">
+                    <h3>🏆 Leaderboard</h3>
+                    <div class="leaderboard-item">
+                        <span>1. Arjun S. - 2450 pts</span>
+                        <span class="status status--success">🏅 Expert</span>
+                    </div>
+                    <div class="leaderboard-item">
+                        <span>2. Priya M. - 2120 pts</span>
+                        <span class="status status--info">🥈 Advanced</span>
+                    </div>
+                    <div class="leaderboard-item current-user">
+                        <span>3. Student Demo - 1250 pts</span>
+                        <span class="status status--warning">🥉 Intermediate</span>
+                    </div>
+                </div>
+
+                <div class="drill-cards">
+                    <div class="drill-card">
+                        <h3>🔥 Fire Evacuation Drill</h3>
+                        <p>Practice safe evacuation from a building fire</p>
+                        <button class="btn btn--primary" onclick="startDrill('fire')">Start Fire Drill</button>
+                    </div>
+                    <div class="drill-card">
+                        <h3>🏠 Earthquake Drill</h3>
+                        <p>Practice Drop, Cover, and Hold On procedure</p>
+                        <button class="btn btn--primary" onclick="startDrill('earthquake')">Start Earthquake Drill</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Tools Section -->
+    <section id="emergency" class="section">
+        <div class="container">
+            <h1>Emergency Tools</h1>
+            
+            <!-- Emergency Contacts -->
+            <div class="emergency-section">
+                <h2>📞 Emergency Contacts</h2>
+                <div class="contacts-grid">
+                    <div class="contact-card emergency">
+                        <h3>🚒 Fire Department</h3>
+                        <div class="contact-number">101</div>
+                        <p>Fire emergencies and rescue operations</p>
+                        <button class="btn btn--primary emergency-btn" onclick="callEmergency('101')">Call Now</button>
+                    </div>
+                    <div class="contact-card emergency">
+                        <h3>👮 Police</h3>
+                        <div class="contact-number">100</div>
+                        <p>Security and law enforcement</p>
+                        <button class="btn btn--primary emergency-btn" onclick="callEmergency('100')">Call Now</button>
+                    </div>
+                    <div class="contact-card emergency">
+                        <h3>🚑 Ambulance</h3>
+                        <div class="contact-number">108</div>
+                        <p>Medical emergencies</p>
+                        <button class="btn btn--primary emergency-btn" onclick="callEmergency('108')">Call Now</button>
+                    </div>
+                    <div class="contact-card">
+                        <h3>🏛️ NDMA Helpline</h3>
+                        <div class="contact-number">1070</div>
+                        <p>National disaster management authority</p>
+                        <button class="btn btn--outline" onclick="callEmergency('1070')">Call NDMA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety Checklist -->
+            <div class="emergency-section">
+                <h2>✅ Safety Checklist</h2>
+                <div class="checklist-container">
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">Emergency kit prepared</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">Evacuation routes memorized</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">Emergency contacts saved</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4">Family meeting point decided</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5">Important documents copied</label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">First aid basics learned</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Evacuation Map -->
+            <div class="emergency-section">
+                <h2>🗺️ Evacuation Routes</h2>
+                <div class="map-placeholder">
+                    <p>Interactive evacuation route map would be integrated here using Google Maps API</p>
+                    <div class="map-legend">
+                        <div class="legend-item">🟢 Safe Zones</div>
+                        <div class="legend-item">🔴 Danger Areas</div>
+                        <div class="legend-item">➡️ Evacuation Routes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            
+            <!-- Overview Cards -->
+            <div class="dashboard-overview">
+                <div class="overview-card">
+                    <h3>Total Students</h3>
+                    <div class="overview-number">450</div>
+                    <div class="overview-trend">📈 +15 this month</div>
+                </div>
+                <div class="overview-card">
+                    <h3>Average Score</h3>
+                    <div class="overview-number">78%</div>
+                    <div class="overview-trend">📊 Above target</div>
+                </div>
+                <div class="overview-card">
+                    <h3>Drill Participation</h3>
+                    <div class="overview-number">92%</div>
+                    <div class="overview-trend">🎯 Excellent</div>
+                </div>
+                <div class="overview-card">
+                    <h3>Modules Completed</h3>
+                    <div class="overview-number">230</div>
+                    <div class="overview-trend">✅ This week</div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-container" style="position: relative; height: 300px;">
+                    <canvas id="moduleChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="activity-section">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">✅</div>
+                        <div class="activity-content">
+                            <strong>Arjun S.</strong> completed Fire Safety Module
+                            <div class="activity-time">10 minutes ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">🏅</div>
+                        <div class="activity-content">
+                            <strong>Priya M.</strong> achieved Earthquake Expert badge
+                            <div class="activity-time">25 minutes ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="quizTitle">Quiz</h2>
+                <button class="modal-close" onclick="closeQuiz()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="quizQuestion"></div>
+                <div id="quizOptions" class="quiz-options"></div>
+                <div id="quizFeedback" class="quiz-feedback hidden"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="quizSubmit" class="btn btn--primary" onclick="submitQuiz()">Submit Answer</button>
+                <button id="quizNext" class="btn btn--secondary hidden" onclick="nextQuestion()">Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drill Modal -->
+    <div id="drillModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="drillTitle">Drill Simulation</h2>
+                <div class="drill-timer" id="drillTimer">30</div>
+            </div>
+            <div class="modal-body">
+                <div id="drillScenario"></div>
+                <div id="drillOptions" class="drill-options"></div>
+                <div id="drillFeedback" class="drill-feedback hidden"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="drillSubmit" class="btn btn--primary" onclick="submitDrill()">Make Decision</button>
+                <button id="drillNext" class="btn btn--secondary hidden" onclick="nextScenario()">Next Scenario</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
